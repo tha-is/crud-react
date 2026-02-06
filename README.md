@@ -2,6 +2,8 @@
 
 O projeto <strong>crud-react</strong> é um aplicativo web de CRUD desenvolvido com React. Um sistema de listagem onde é possível criar, atualizar e deletar os itens da tabela.
 
+![alt text](Tela_crud.png)
+
 -----------------------
 
 #### Como executar o projeto
