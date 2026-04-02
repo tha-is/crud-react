@@ -1,0 +1,391 @@
+/* ===================================================
+   Windows 2000 / Classic Microsoft UI Theme
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #008080; /* Classic Win2K teal desktop */
+  font-family: 'MS Sans Serif', 'Tahoma', 'Arial', sans-serif;
+  font-size: 11px;
+  color: #000;
+  min-height: 100vh;
+}
+
+/* ---- Desktop wrapper ---- */
+.win2k-desktop {
+  min-height: 100vh;
+  background-color: #008080;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- Window chrome ---- */
+.win2k-window {
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  box-shadow: 2px 2px 0 #000;
+  width: 100%;
+  max-width: 860px;
+  margin-bottom: 16px;
+}
+
+/* ---- Title bar ---- */
+.win2k-titlebar {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.win2k-titlebar-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.win2k-titlebar-icon {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 1px solid #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.win2k-titlebar-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.win2k-titlebar-btn {
+  width: 16px;
+  height: 14px;
+  background: #d4d0c8;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #404040;
+  border-bottom: 1px solid #404040;
+  font-size: 9px;
+  font-weight: bold;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ---- Menu bar ---- */
+.win2k-menubar {
+  background: #d4d0c8;
+  border-bottom: 1px solid #808080;
+  padding: 2px 4px;
+  display: flex;
+  gap: 2px;
+  font-size: 11px;
+}
+
+.win2k-menu-item {
+  padding: 2px 8px;
+  cursor: default;
+}
+
+.win2k-menu-item:hover {
+  background: #000080;
+  color: #fff;
+}
+
+/* ---- Window content ---- */
+.win2k-content {
+  padding: 12px;
+}
+
+/* ---- Groupbox / Panel ---- */
+.win2k-groupbox {
+  border: 2px groove #808080;
+  border-top: none;
+  padding: 8px 10px 10px 10px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.win2k-groupbox-legend {
+  position: absolute;
+  top: -9px;
+  left: 8px;
+  background: #d4d0c8;
+  padding: 0 4px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.win2k-groupbox-inner {
+  padding-top: 4px;
+}
+
+/* ---- Form layout ---- */
+.win2k-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
+.win2k-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.win2k-form-field label {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* ---- Classic input ---- */
+.win2k-input {
+  background: #fff;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding: 2px 4px;
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  font-size: 11px;
+  color: #000;
+  outline: none;
+  width: 100%;
+}
+
+.win2k-input:focus {
+  outline: 1px dotted #000;
+  outline-offset: -2px;
+}
+
+/* ---- Classic button ---- */
+.win2k-btn {
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  padding: 3px 14px;
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  min-width: 75px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.win2k-btn:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding-top: 4px;
+  padding-left: 15px;
+}
+
+.win2k-btn:focus {
+  outline: 1px dotted #000;
+  outline-offset: -4px;
+}
+
+.win2k-btn-primary {
+  font-weight: bold;
+}
+
+.win2k-btn-warning {
+  /* no color in classic Win2k - just standard grey */
+}
+
+.win2k-btn-danger {
+  color: #800000;
+  font-weight: bold;
+}
+
+/* ---- Button bar ---- */
+.win2k-btn-row {
+  display: flex;
+  gap: 6px;
+  padding-top: 8px;
+  justify-content: flex-start;
+}
+
+/* ---- Status bar ---- */
+.win2k-statusbar {
+  border-top: 1px solid #808080;
+  padding: 2px 8px;
+  font-size: 11px;
+  display: flex;
+  gap: 8px;
+}
+
+.win2k-status-panel {
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 0 6px;
+  min-width: 100px;
+}
+
+/* ---- Table / ListView ---- */
+.win2k-listview {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.win2k-listview thead tr {
+  background: #d4d0c8;
+}
+
+.win2k-listview thead th {
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  padding: 3px 8px;
+  text-align: left;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.win2k-listview tbody tr {
+  background: #fff;
+}
+
+.win2k-listview tbody tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.win2k-listview tbody tr.selected,
+.win2k-listview tbody tr:hover {
+  background: #000080;
+  color: #fff;
+}
+
+.win2k-listview tbody tr:hover .win2k-btn,
+.win2k-listview tbody tr.selected .win2k-btn {
+  color: #000;
+}
+
+.win2k-listview tbody td {
+  padding: 3px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 160px;
+  text-overflow: ellipsis;
+}
+
+/* ---- Taskbar ---- */
+.win2k-taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  z-index: 999;
+  gap: 4px;
+}
+
+.win2k-start-btn {
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  padding: 2px 8px 2px 6px;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+}
+
+.win2k-taskbar-window-btn {
+  background: #d4d0c8;
+  border-top: 1px solid #404040;
+  border-left: 1px solid #404040;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding: 2px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.win2k-taskbar-tray {
+  margin-left: auto;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 2px 8px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- Separator ---- */
+.win2k-separator {
+  border: none;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #fff;
+  margin: 8px 0;
+}
+
+/* ---- Scrollbar styling for webkit ---- */
+::-webkit-scrollbar { width: 16px; height: 16px; }
+::-webkit-scrollbar-track { background: #d4d0c8; }
+::-webkit-scrollbar-thumb {
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+}
+::-webkit-scrollbar-button {
+  background: #d4d0c8;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  height: 16px;
+  width: 16px;
+}
