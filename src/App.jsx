@@ -5,10 +5,7 @@ import '@picocss/pico/css/pico.min.css'
 import Footer from "./components/Footer";
 import Cards from "./components/Cards";
 
-function App() {
-
-  const [controleForm, setControleForm] = useState([]);
-  const [formData, setFormData] = useState({
+const EMPTY_FORM = {
   nome_cliente: "",
   telefone: "",
   endereco_origem: "",
@@ -17,7 +14,12 @@ function App() {
   obs: "",
   valor_frete: "",
   status: ""
-  });
+};
+
+function App() {
+
+  const [controleForm, setControleForm] = useState([]);
+  const [formData, setFormData] = useState(EMPTY_FORM);
   const [produtoEditando, setProdutoEditando] = useState(null);
 
   const handleChange = (e) => {
@@ -69,16 +71,7 @@ const addServico = async (e) => {
       );
 
       setProdutoEditando(null);
-      setFormData({
-        nome_cliente: "",
-        telefone: "",
-        endereco_origem: "",
-        endereco_destino: "",
-        tipo_servico: "",
-        obs: "",
-        valor_frete: "",
-        status: ""
-      });
+      setFormData(EMPTY_FORM);
 
     } else {
       // INSERT
@@ -93,16 +86,7 @@ const addServico = async (e) => {
       setControleForm((prev) => [...prev, data]);
 
       // limpa o formulário
-      setFormData({
-        nome_cliente: "",
-        telefone: "",
-        endereco_origem: "",
-        endereco_destino: "",
-        tipo_servico: "",
-        obs: "",
-        valor_frete: "",
-        status: ""
-      });
+      setFormData(EMPTY_FORM);
     }
 
   } catch (error) {
@@ -112,9 +96,11 @@ const addServico = async (e) => {
 
   async function handleEdit(id) {
         const servico = controleForm.find(item => item.id === id);
-        
-        setFormData(servico);
-        setProdutoEditando(null);
+        if (!servico) return;
+
+        const { id: _id, created_at: _createdAt, ...servicoEditavel } = servico;
+        setFormData(servicoEditavel);
+        setProdutoEditando(id);
     }
 
   return (
